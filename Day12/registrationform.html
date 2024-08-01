@@ -1,80 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-    crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <div class="row bg-info">Registration Form</div>
-        <div class="row">
-            <form class="form-group">
-                <label class="form-label" for="fname">First Name</label>
-                <input type="text" name="fname" class="form-control" 
-                placeholder="enter first name" required min="3">
 
-                <label class="form-label" for="lname">Last name</label>
-                <input type="text" name="lname" class="form-control" 
-                placeholder="enter last name" >
-
-                <label class="form-label" for="uname">Username</label>
-                <input class="form-control" name="uname" placeholder="enter user name" required min="5">
-
-                <label class="form-label" for="pwd">Password</label>
-                <input class="form-control" type="password" name="pwd" 
-                required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
-
-                <label class="form-label" for="conpwd">Confirm Password</label>
-                <input class="form-control" type="password" name="conpwd" 
-                required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
-
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control"id="email" 
-                placeholder="name@example.com">
-
-                <label for="mobile" class="form-label">Mobile number</label>
-                <input type="number" class="form-control" size="10">
-
-                <label class="form-label" for="dob">DOB</label>
-                <input type="date" class="form-control" name="dob">
-
-                <label class="form-check-label" for="gender">Gender</label><br>
-                <input class="form-check-input" type="radio" name="gender" >Male
-                <input class="form-check-input" type="radio" name="gender" >Female
-
-                <br>
-                <label class="form-check-label" for="skill">SkillSet</label>
-                <input class="form-check-input" type="checkbox" name="skill" >java
-                <input class="form-check-input" type="checkbox" name="skill" >C pgram
-                <input class="form-check-input" type="checkbox" name="skill" >python
-
-                <br>
-                <label class="form-label" for="qual">Qualification</label>
-                <select class="form-select">
-                    <option name="qual"> B.E</option>
-                    <option name="qual"> MCA</option>
-                    <option name="qual"> M.tech</option>
-                </select>
-
-                <br>
-                <label class="form-label" for="photo">Photo</label>
-                <input type="file" class="form-control-file" name="photo">
-
-                <br>
-                <label class="form-label" for="resume">Resume</label>
-                <input type="file" class="form-control-file" name="resume">
-                
-                <br>
-                <input type="submit" class="btn btn-primary">
-                <input type="reset" class="btn btn-warning">
-                
-                
-            </form>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row bg-info">Registration Form</div>
+            <div class="row">
+                <form class="form-group" onsubmit="submitData()" id="regForm">
+                    <label class="form-group" for="fname">First Name</label>
+                    <input type="text"
+                        name="fname"
+                        class="form-control"
+                        placeholder="Enter First name "
+                        min="3">
+                        
+                    <label class="form-group" for="lname">Last Name</label>
+                    <input type="text"
+                        name="lname"
+                        class="form-control"
+                        placeholder="Enter Last name "
+                        min="3">
+    
+                    <label class="form-group" for="uname">username</label>
+                    <input type="text"
+                        name="uname"
+                        class="form-control"
+                        placeholder="Enter Username "
+                        min="3">
+    
+                    <label class="form-group" for="password">Password</label>
+                    <input type="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Enter Password "
+                        required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
+    
+                    <label class="form-group" for="conpwd">Confirm Password</label>
+                    <input type="password"
+                        name="conpwd"
+                        class="form-control"
+                        placeholder="Enter Confirmed Password "
+                        required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
+    
+                        <label class="form-group" for="mobile">Mobile Number</label>
+                        <input type="number"
+                            name="mobile"
+                            class="form-control"
+                            placeholder="Enter Mobile Number "
+                            size="10">
+                            
+                        <label class="form-group" for="email">Email</label>
+                        <input type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder="name@gmail.com ">
+    
+                        <label class="form-group" for="dob">Date of Birth</label>
+                        <input type="date"
+                            name="dob"
+                            class="form-control">
+                                
+                        <label class="form-group" for="gender">Gender</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="Male">
+                                <label class="form-check-label">Male</label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="Female">
+                                <label class="form-check-label">Female</label>
+                            </div>
+    
+                        <label class="form-group" for="skillset">Skillset</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="skillset" value="C++">
+                                <label class="form-check-label">C++</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="skillset" value="Python">
+                                <label class="form-check-label">Python</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="skillset" value="Java">
+                                <label class="form-check-label">Java</label>
+                            </div>
+                            
+                            
+                        <label class="form-group" for="qualification">Qualification</label>
+                            <select class="form-control" name="qualification">
+                                <option value="">Select Qualification</option>
+                                <option value="High School">High School</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="Master's Degree">Master's Degree</option>
+                                <option value="PhD">PhD</option>
+                            </select>
+                            
+                        <label class="form-group" for="address">Address</label>
+                            <textarea class="form-control" name="address"></textarea>
+                            
+                            <label class="form-group" for="photo">Upload Photo</label>
+                            <input type="file" class="form-control" name="photo">
+                            
+                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                        <button type="reset" class="btn btn-dark" value="Reset">Reset</button>
+                </form>
+    
+                <script>
+                    
+                    const submitData=() =>{
+                        event.preventDefault()
+                        let myformdata = document.getElementById('regForm');
+                        document.getElementById("fname").innerHTML = myformdata.fname.value;
+                        document.getElementById("lname").innerHTML = myformdata.lname.value;
+                        document.getElementById("uname").innerHTML = myformdata.uname.value;
+                        document.getElementById("mobile").innerHTML = myformdata.mobile.value;
+                        document.getElementById("email").innerHTML = myformdata.email.value;
+                        document.getElementById("dob").innerHTML = myformdata.dob.value;
+                        document.getElementById("gender").innerHTML = myformdata.gender.value;
+                        
+                        
+                        let skill= document.getElementsByName("skillset");
+                        
+                        var textValue='';
+                        for(var i=0; i<skill.length; i++)
+                        {
+                            if(skill[i].checked) {
+                              textValue += skill[i].value + ", ";
+                           
+                        }
+                            
+                    }
+                    //console.log(textValue)
+                    document.getElementById("skillset").innerHTML =textValue
+                        document.getElementById("qualification").innerHTML = myformdata.qualification.value;
+                        document.getElementById("address").innerHTML = myformdata.address.value;
+    
+                    }
+    
+                </script>
+                <table border ="3px">
+                    <tr>
+                        <td>First Name</td>
+                        <td id="fname"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td id="lname"></td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td id="uname"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No.</td>
+                        <td id="mobile"></td>
+                    </tr>
+                    <tr>
+                        <td>Email ID</td>
+                        <td id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Date of birth</td>
+                        <td id="dob"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td id="gender"></td>
+                    </tr>
+                    <tr>
+                        <td>Skillset</td>
+                        <td id="skillset"></td>
+                    </tr>
+                    <tr>
+                        <td>Qualification</td>
+                        <td id="qualification"></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td id="address"></td>
+                    </tr>
+                </table>
+            </div>
+            
+    
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
